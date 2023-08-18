@@ -1,16 +1,36 @@
-# mvc_kit_started
+# Flutter MVC Starter Kit
 
-A new Flutter project.
+This repository provides three distinct implementations of the MVC pattern in Flutter, utilizing different libraries and approaches.
 
-## Getting Started
+## Project Structure
 
-This project is a starting point for a Flutter application.
+The project is divided into three main directories, each representing a different approach:
 
-A few resources to get you started if this is your first Flutter project:
+1. `flutter_simple`: A pure Flutter implementation without additional libraries.
+2. `riverpod`: Uses `flutter_riverpod` for state management.
+3. `stacked__get_it`: Combines `stacked` for MVVM architecture and `get_it` for dependency injection.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Inside each directory, you will find:
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- `components/`: Contains the counter view (`counter_view.dart`).
+- `controller/`: Contains the counter controller (`counter_controller.dart`).
+- `models/`: Contains the counter data model (`counter_model.dart`).
+- `main.dart`: It's the entry point to run the application.
+
+## How to Run
+
+To run any of the versions, use the following command, replacing `[DIR]` with the desired directory name (e.g., `flutter_simple`):
+
+```bash
+flutter run -t lib/src/[DIR]/main.dart
+```
+
+## Kit Descriptions
+### Flutter Simple
+This version uses pure Flutter to implement the MVC pattern. State and logic are handled in the CounterController, and the view simply displays the state and receives actions via callbacks.
+
+### Riverpod
+This approach employs the flutter_riverpod library for state management. It defines a state provider and uses ConsumerWidget to watch and react to state changes.
+
+### Stacked + Get It
+In this approach, we blend stacked for MVVM architecture with get_it for dependency injection. State is managed via a model that inherits from BaseViewModel, and get_it is utilized to inject this model into our view.
